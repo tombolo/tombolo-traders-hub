@@ -1,0 +1,67 @@
+.social-icons-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.social-icon {
+  width: 6.5rem;
+  height: 6.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* TikTok Icon */
+.tiktok-icon {
+  color: #000000;
+}
+
+.social-icon-link:hover .tiktok-icon {
+  color: #FE2C55;
+  transform: scale(1.1);
+}
+
+/* Telegram Icon */
+.telegram-icon {
+  color: #000000;
+}
+
+.social-icon-link:hover .telegram-icon {
+  color: #0088CC;
+  transform: scale(1.1);
+}
+
+/* Instagram Icon */
+.instagram-icon {
+  color: #000000;
+}
+
+.social-icon-link:hover .instagram-icon {
+  color: #E1306C;
+  transform: scale(1.1);
+}
+
+.social-icon-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.social-icon-link:active {
+  transform: scale(0.95);
+}
