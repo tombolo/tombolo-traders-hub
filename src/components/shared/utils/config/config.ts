@@ -2,7 +2,7 @@ import { LocalStorageConstants, LocalStorageUtils, URLUtils } from '@deriv-com/u
 import { isStaging } from '../url/helpers';
 
 export const APP_IDS = {
-    LOCALHOST: 70344,
+    LOCALHOST: 69119,
     TMP_STAGING: 64584,
     STAGING: 29934,
     STAGING_BE: 29934,
@@ -10,7 +10,7 @@ export const APP_IDS = {
     PRODUCTION: 65555,
     PRODUCTION_BE: 65556,
     PRODUCTION_ME: 65557,
-    NGROK: 70344,
+    NGROK: 69119,
 };
 
 export const livechat_license_id = 12049137;
@@ -72,7 +72,7 @@ export const getDefaultAppIdAndUrl = () => {
     const server_url = getDefaultServerURL();
 
     if (isTestLink()) {
-        return { app_id: 70344, server_url }; // Hardcoded 70344 instead of APP_IDS.LOCALHOST
+        return { app_id: 69119, server_url }; // Hardcoded 70344 instead of APP_IDS.LOCALHOST
     }
 
     const current_domain = getCurrentProductionDomain() ?? '';
@@ -82,7 +82,7 @@ export const getDefaultAppIdAndUrl = () => {
 };
 
 export const getAppId = () => {
-    return 70344; // Always return 70344 regardless of localStorage
+    return 69119; // Always return 70344 regardless of localStorage
 };
 
 export const getSocketURL = () => {
@@ -147,7 +147,7 @@ export const generateOAuthURL = () => {
     }
 
     // Force app_id to 70344 in OAuth URL
-    original_url.searchParams.set('app_id', '70344');
+    original_url.searchParams.set('app_id', '69119');
 
     return original_url.toString() || oauth_url;
 };
