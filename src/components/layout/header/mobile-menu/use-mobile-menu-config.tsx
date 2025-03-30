@@ -8,12 +8,12 @@ import { useIsIntercomAvailable } from '@/hooks/useIntercom';
 import useThemeSwitcher from '@/hooks/useThemeSwitcher';
 import RootStore from '@/stores/root-store';
 import {
-    LegacyReportsIcon,
     LegacyHelpCentreIcon,
     LegacyLogout1pxIcon,
+    LegacyProfileSmIcon,
+    LegacyReportsIcon,
     LegacyTheme1pxIcon,
     LegacyWhatsappIcon,
-    LegacyProfileSmIcon,
 } from '@deriv/quill-icons/Legacy';
 import { useTranslations } from '@deriv-com/translations';
 import { ToggleSwitch } from '@deriv-com/ui';

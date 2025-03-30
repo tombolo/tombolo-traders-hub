@@ -12,12 +12,12 @@ import { Localize, useTranslations } from '@deriv-com/translations';
 import { Header, useDevice, Wrapper } from '@deriv-com/ui';
 import { Tooltip } from '@deriv-com/ui';
 import { AppLogo } from '../app-logo';
+import { SocialIcons } from '../header/mobile-menu/social-icons';
 import AccountsInfoLoader from './account-info-loader';
 import AccountSwitcher from './account-switcher';
 import MenuItems from './menu-items';
 import MobileMenu from './mobile-menu';
 import './header.scss';
-import { SocialIcons } from '../header/mobile-menu/social-icons';
 
 const AppHeader = observer(() => {
     const { isDesktop } = useDevice();

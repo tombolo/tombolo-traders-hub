@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/hooks/useStore';
-import { useEffect, useState } from 'react';
 import './BlocklyLoading.scss';
 
 const BlocklyLoading = observer(() => {

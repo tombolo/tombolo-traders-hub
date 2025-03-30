@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import './ChunkLoader.scss';
 
 export default function QuantumLoader({ message }: { message: string }) {

@@ -9,8 +9,8 @@ import ServerTime from './../../footer/ServerTime';
 import BackButton from './back-button';
 import MenuContent from './menu-content';
 import MenuHeader from './menu-header';
-import ToggleButton from './toggle-button';
 import { SocialIcons } from './social-icons';
+import ToggleButton from './toggle-button';
 import './mobile-menu.scss';
 
 

@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
+import { FaChartBar, FaChartLine, FaPuzzlePiece } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import DesktopWrapper from '@/components/shared_ui/desktop-wrapper';
@@ -20,14 +21,13 @@ import {
     LabelPairedPuzzlePieceTwoCaptionBoldIcon,
 } from '@deriv/quill-icons/LabelPaired';
 import { LegacyGuide1pxIcon } from '@deriv/quill-icons/Legacy';
-import { FaChartLine, FaChartBar, FaPuzzlePiece } from 'react-icons/fa';
 import { Localize, localize } from '@deriv-com/translations';
 import { useDevice } from '@deriv-com/ui';
 import RunPanel from '../../components/run-panel';
 import ChartModal from '../chart/chart-modal';
 import Dashboard from '../dashboard';
-import Dtrader from '../dtrader/trade'
 import RunStrategy from '../dashboard/run-strategy';
+import Dtrader from '../dtrader/trade'
 import Finesttool from '../finesttool/finesttool';
 import Tradingview from '../tradingview/tradingview';
 
