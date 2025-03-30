@@ -1,5 +1,4 @@
 import { LocalStorageConstants, LocalStorageUtils, URLUtils } from '@deriv-com/utils';
-import { isStaging } from '../url/helpers';
 
 export const APP_IDS = {
     LOCALHOST: 69119,
@@ -11,6 +10,7 @@ export const APP_IDS = {
     PRODUCTION_BE: 65556,
     PRODUCTION_ME: 65557,
     NGROK: 69119,
+    NETLIFY: 69119,
 };
 
 export const livechat_license_id = 12049137;
@@ -25,6 +25,7 @@ export const domain_app_ids = {
     'dbot.deriv.be': APP_IDS.PRODUCTION_BE,
     'dbot.deriv.me': APP_IDS.PRODUCTION_ME,
     'ngrok-free.app': APP_IDS.NGROK,
+    'netlify.app': APP_IDS.NETLIFY,
 };
 
 export const getCurrentProductionDomain = () =>
@@ -41,6 +42,7 @@ export const isTestLink = () => {
         window.location.origin?.includes('.binary.sx') ||
         window.location.origin?.includes('bot-65f.pages.dev') ||
         window.location.origin?.includes('ngrok-free.app') ||
+        window.location.origin?.includes('netlify.app') ||
         isLocal()
     );
 };
