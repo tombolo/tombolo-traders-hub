@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
-import { FaChartBar, FaChartLine, FaPuzzlePiece } from 'react-icons/fa';
+import { FaChartBar, FaChartLine, FaPuzzlePiece, FaChessKnight } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import DesktopWrapper from '@/components/shared_ui/desktop-wrapper';
@@ -271,7 +271,7 @@ const AppWrapper = observer(() => {
                         <div
                             label={
                                 <>
-                                    <FaPuzzlePiece
+                                    <FaChessKnight
                                         height='16px'
                                         width='16px'
                                         fill='var(--text-general)'
