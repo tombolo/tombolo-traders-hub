@@ -94,6 +94,7 @@ const Trade = () => {
             padding: '20px',
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
             fontSize: '16px',
+            marginBottom: '70px',
             overflow: 'auto',
             position: 'relative',
             '::before': {
@@ -127,7 +128,7 @@ const Trade = () => {
                         color: '#212529',
                         fontSize: '3rem',
                         textAlign: 'center',
-                        marginTop: '300px',
+                        marginTop: '350px',
                         fontWeight: '800',
                         background: 'linear-gradient(90deg, #2b5876 0%, #4e4376 100%)',
                         WebkitBackgroundClip: 'text',
@@ -170,7 +171,7 @@ const Trade = () => {
                         gap: '40px',
                         width: '100%',
                         maxWidth: '1200px',
-                        marginBottom: '40px'
+                        marginBottom: '80px'
                     }}>
                         {/* Over/Under Strategy Card */}
                         <div
