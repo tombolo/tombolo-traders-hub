@@ -119,13 +119,15 @@ const Trade = () => {
                     maxHeight: '90vh',
                     overflowY: 'auto',
                     position: 'relative',
+                    margin: '20px',
+                    
                     zIndex: 1
                 }}>
                     <h1 style={{
                         color: '#212529',
                         fontSize: '3rem',
                         textAlign: 'center',
-                        marginBottom: '10px',
+                        marginTop: '300px',
                         fontWeight: '800',
                         background: 'linear-gradient(90deg, #2b5876 0%, #4e4376 100%)',
                         WebkitBackgroundClip: 'text',
