@@ -16,11 +16,9 @@ import { isDbotRTL } from '@/external/bot-skeleton/utils/workspace';
 import { useApiBase } from '@/hooks/useApiBase';
 import { useStore } from '@/hooks/useStore';
 import {
-    LabelPairedChartLineCaptionRegularIcon,
     LabelPairedObjectsColumnCaptionRegularIcon,
     LabelPairedPuzzlePieceTwoCaptionBoldIcon,
 } from '@deriv/quill-icons/LabelPaired';
-import { LegacyGuide1pxIcon } from '@deriv/quill-icons/Legacy';
 import { Localize, localize } from '@deriv-com/translations';
 import { useDevice } from '@deriv-com/ui';
 import RunPanel from '../../components/run-panel';
@@ -30,6 +28,7 @@ import RunStrategy from '../dashboard/run-strategy';
 import Dtrader from '../dtrader/trade'
 import Finesttool from '../finesttool/finesttool';
 import Tradingview from '../tradingview/tradingview';
+import Strategies from '../strategies/strategies';
 
 const Chart = lazy(() => import('../chart'));
 
@@ -61,7 +60,7 @@ const AppWrapper = observer(() => {
     const { clear } = summary_card;
     const { DASHBOARD, BOT_BUILDER } = DBOT_TABS;
     const init_render = React.useRef(true);
-    const hash = ['dashboard', 'bot_builder', 'chart', 'dtrader', 'finesttool', 'tradingview'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'dtrader', 'finesttool', 'tradingview', 'strategies'];
     const { isDesktop } = useDevice();
     const location = useLocation();
     const navigate = useNavigate();
@@ -265,6 +264,29 @@ const AppWrapper = observer(() => {
                                     fallback={<ChunkLoader message={localize('Please wait, loading trading view...')} />}
                                 >
                                     <Tradingview />
+                                </Suspense>
+                            </div>
+                        </div>
+
+                        <div
+                            label={
+                                <>
+                                    <FaPuzzlePiece
+                                        height='16px'
+                                        width='16px'
+                                        fill='var(--text-general)'
+                                        className='icon-general-fill-g-path'
+                                    />
+                                    <Localize i18n_default_text='Strategies' />
+                                </>
+                            }
+                            id='id-tutorials'
+                        >
+                            <div className='tutorials-wrapper'>
+                                <Suspense
+                                    fallback={<ChunkLoader message={localize('Please wait, loading strategies...')} />}
+                                >
+                                    <Strategies />
                                 </Suspense>
                             </div>
                         </div>
