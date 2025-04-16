@@ -2,15 +2,16 @@ import { LocalStorageConstants, LocalStorageUtils, URLUtils } from '@deriv-com/u
 
 export const APP_IDS = {
     LOCALHOST: 69119,
-    TMP_STAGING: 64584,
-    STAGING: 29934,
-    STAGING_BE: 29934,
-    STAGING_ME: 29934,
-    PRODUCTION: 65555,
-    PRODUCTION_BE: 65556,
-    PRODUCTION_ME: 65557,
+    TMP_STAGING: 69119,
+    STAGING: 69119,
+    STAGING_BE: 69119,
+    STAGING_ME: 69119,
+    PRODUCTION: 69119,
+    PRODUCTION_BE: 69119,
+    PRODUCTION_ME: 69119,
     NGROK: 69119,
     NETLIFY: 69119,
+    FINESTTRADERS: 69119,
 };
 
 export const livechat_license_id = 12049137;
@@ -26,6 +27,7 @@ export const domain_app_ids = {
     'dbot.deriv.me': APP_IDS.PRODUCTION_ME,
     'ngrok-free.app': APP_IDS.NGROK,
     'netlify.app': APP_IDS.NETLIFY,
+    'finesttraders.com': APP_IDS.FINESTTRADERS,
 };
 
 export const getCurrentProductionDomain = () =>
@@ -43,6 +45,7 @@ export const isTestLink = () => {
         window.location.origin?.includes('bot-65f.pages.dev') ||
         window.location.origin?.includes('ngrok-free.app') ||
         window.location.origin?.includes('netlify.app') ||
+        window.location.origin?.includes('finesttraders.com') ||
         isLocal()
     );
 };

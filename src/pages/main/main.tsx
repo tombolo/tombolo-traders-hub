@@ -29,6 +29,7 @@ import Dtrader from '../dtrader/trade'
 import Finesttool from '../finesttool/finesttool';
 import Tradingview from '../tradingview/tradingview';
 import Strategies from '../strategies/strategies';
+import Strategy from '../strategy/strategy';
 
 const Chart = lazy(() => import('../chart'));
 
@@ -60,7 +61,7 @@ const AppWrapper = observer(() => {
     const { clear } = summary_card;
     const { DASHBOARD, BOT_BUILDER } = DBOT_TABS;
     const init_render = React.useRef(true);
-    const hash = ['dashboard', 'bot_builder', 'chart', 'dtrader', 'finesttool', 'tradingview', 'strategies'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'dtrader', 'finesttool', 'tradingview', 'strategies', 'strategy'];
     const { isDesktop } = useDevice();
     const location = useLocation();
     const navigate = useNavigate();
@@ -268,6 +269,8 @@ const AppWrapper = observer(() => {
                             </div>
                         </div>
 
+                        
+
                         <div
                             label={
                                 <>
@@ -277,7 +280,7 @@ const AppWrapper = observer(() => {
                                         fill='var(--text-general)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='Strategies' />
+                                    <Localize i18n_default_text='Strategy' />
                                 </>
                             }
                             id='id-tutorials'
@@ -286,7 +289,7 @@ const AppWrapper = observer(() => {
                                 <Suspense
                                     fallback={<ChunkLoader message={localize('Please wait, loading strategies...')} />}
                                 >
-                                    <Strategies />
+                                    <Strategy />
                                 </Suspense>
                             </div>
                         </div>
