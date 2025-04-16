@@ -108,9 +108,9 @@
 /* Titles */
 .strategies-title {
     color: var(--text-dark);
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     text-align: center;
-    margin-top: 1250px; /* Default for small screens */
+    margin-top: 1300px; /* Default for small screens */
     font-weight: 800;
     background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
     -webkit-background-clip: text;
@@ -143,7 +143,7 @@
 
 .strategies-subtitle {
     color: var(--text-medium);
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     max-width: 700px;
     text-align: center;
     line-height: 1.6;
@@ -240,8 +240,8 @@
 }
 
 .card-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -257,7 +257,7 @@
 }
 
 .strategy-card h3 {
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
@@ -268,7 +268,7 @@
     color: var(--text-secondary);
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     line-height: 1.6;
 }
 
@@ -289,6 +289,12 @@
     transition: var(--transition);
     overflow: hidden;
     position: relative;
+}
+.explore-button span {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
 }
 
 .explore-button::before {
