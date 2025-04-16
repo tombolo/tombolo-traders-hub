@@ -30,6 +30,7 @@ import Finesttool from '../finesttool/finesttool';
 import Tradingview from '../tradingview/tradingview';
 import Strategies from '../strategies/strategies';
 import Strategy from '../strategy/strategy';
+import Risk from '../risk/risk';
 
 const Chart = lazy(() => import('../chart'));
 
@@ -61,7 +62,7 @@ const AppWrapper = observer(() => {
     const { clear } = summary_card;
     const { DASHBOARD, BOT_BUILDER } = DBOT_TABS;
     const init_render = React.useRef(true);
-    const hash = ['dashboard', 'bot_builder', 'chart', 'dtrader', 'finesttool', 'tradingview', 'strategies', 'strategy'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'dtrader', 'finesttool', 'tradingview', 'strategies', 'strategy', 'risk'];
     const { isDesktop } = useDevice();
     const location = useLocation();
     const navigate = useNavigate();
@@ -313,6 +314,30 @@ const AppWrapper = observer(() => {
                                     fallback={<ChunkLoader message={localize('Please wait, loading strategies...')} />}
                                 >
                                     <Strategy />
+                                </Suspense>
+                            </div>
+                        </div>
+
+
+                        <div
+                            label={
+                                <>
+                                    <FaChessKnight
+                                        height='16px'
+                                        width='16px'
+                                        fill='var(--text-general)'
+                                        className='icon-general-fill-g-path'
+                                    />
+                                    <Localize i18n_default_text='Risk Management' />
+                                </>
+                            }
+                            id='id-tutorials'
+                        >
+                            <div className='tutorials-wrapper'>
+                                <Suspense
+                                    fallback={<ChunkLoader message={localize('Please wait, loading strategies...')} />}
+                                >
+                                    <Risk />
                                 </Suspense>
                             </div>
                         </div>
