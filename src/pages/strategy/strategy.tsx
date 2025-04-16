@@ -153,8 +153,8 @@ const Trade = () => {
                 </div>
             ]
         },
-        trendRider: {
-            title: "Trend Rider",
+        matchesDiffers: {
+            title: "Matches/Differs",
             description: "Capitalize on sustained market movements",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -165,7 +165,62 @@ const Trade = () => {
             accentColor: "#43e97b",
             bgPattern: "waves",
             tips: [
-                // ... (your tips content)
+                <div className="tip-content">
+                    <div className="warning-banner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span>Requires automated tools - Not for manual trading!</span>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Requirements</h4>
+                        <ul className="diamond-list">
+                            <li>Use 1 tick duration</li>
+                            <li>Apply volatility: 100 / 75 / 50</li>
+                            <li>1s interval between entries</li>
+                            <li>Use rapid execution tools</li>
+                        </ul>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Trading Matches</h4>
+                        <ul className="checkmark-list">
+                            <li>Digit with highest probability is consistently repeated</li>
+                            <li>Green bar on that digit is ≥ 14%</li>
+                            <li>No red bars on the same digit within last 3 ticks</li>
+                        </ul>
+                        <div className="entry-point">
+                            <span>ENTRY:</span> When a single digit dominates recent results and shows GREEN bar ≥ 14%
+                        </div>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Trading Differs</h4>
+                        <ul className="checkmark-list">
+                            <li>Target digit has low probability (≤ 6%)</li>
+                            <li>No repeating pattern or domination by a single digit</li>
+                            <li>Red bar appears frequently on the same digit</li>
+                        </ul>
+                        <div className="entry-point">
+                            <span>ENTRY:</span> When no digit is repeated and a target digit is marked RED (≤ 6%)
+                        </div>
+                    </div>
+
+                    <div className="pro-tip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                        <div>
+                            <strong>PRO TIP:</strong> Use Matches during consolidation and Differs during volatility for better precision.
+                        </div>
+                    </div>
+                </div>
+
             ]
         },
         breakout: {
@@ -181,7 +236,49 @@ const Trade = () => {
             accentColor: "#ff9a9e",
             bgPattern: "grid",
             tips: [
-                // ... (your tips content)
+                <div className="tip-content">
+                    <div className="warning-banner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span>Requires automated tools - Not for manual trading!</span>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Requirements</h4>
+                        <ul className="diamond-list">
+                            <li>5s or 10s duration</li>
+                            <li>Volatility 100 or Step Index</li>
+                            <li>Support/resistance detection or custom zone logic</li>
+                        </ul>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Breakout Setup</h4>
+                        <ul className="checkmark-list">
+                            <li>Price consolidates in a tight range (2–3 ticks)</li>
+                            <li>Sudden spike in tick volume or volatility bar</li>
+                            <li>Breaks previous high or low with momentum</li>
+                        </ul>
+                        <div className="entry-point">
+                            <span>ENTRY:</span> Enter trade on breakout **after confirming momentum bar** and no pullback
+                        </div>
+                    </div>
+
+                    <div className="pro-tip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                        <div>
+                            <strong>PRO TIP:</strong> Avoid trading breakouts in ranging markets — wait for buildup and compression!
+                        </div>
+                    </div>
+                </div>
+
             ]
         },
         scalping: {
@@ -197,7 +294,49 @@ const Trade = () => {
             accentColor: "#a18cd1",
             bgPattern: "hexagons",
             tips: [
-                // ... (your tips content)
+                <div className="tip-content">
+                    <div className="warning-banner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span>Requires automated tools - Not for manual trading!</span>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Requirements</h4>
+                        <ul className="diamond-list">
+                            <li>1 tick or 2s duration</li>
+                            <li>Volatility 75 or 50</li>
+                            <li>Fast chart with live tick feed</li>
+                        </ul>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Scalping Setup</h4>
+                        <ul className="checkmark-list">
+                            <li>High frequency of green bars in 3–5 ticks</li>
+                            <li>Bar momentum favors one direction (e.g., 4 green vs 1 red)</li>
+                            <li>Minimal delay between bars</li>
+                        </ul>
+                        <div className="entry-point">
+                            <span>ENTRY:</span> Enter immediately **after 3 consecutive green/red ticks** in same direction
+                        </div>
+                    </div>
+
+                    <div className="pro-tip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                        <div>
+                            <strong>PRO TIP:</strong> Scalping requires speed — reduce latency and avoid high ping environments.
+                        </div>
+                    </div>
+                </div>
+
             ]
         }
     };
