@@ -269,6 +269,29 @@ const AppWrapper = observer(() => {
                             </div>
                         </div>
 
+                        <div
+                            label={
+                                <>
+                                    <FaChessKnight
+                                        height='16px'
+                                        width='16px'
+                                        fill='var(--text-general)'
+                                        className='icon-general-fill-g-path'
+                                    />
+                                    <Localize i18n_default_text='Copy Trading' />
+                                </>
+                            }
+                            id='id-tutorials'
+                        >
+                            <div className='tutorials-wrapper'>
+                                <Suspense
+                                    fallback={<ChunkLoader message={localize('Please wait, loading strategies...')} />}
+                                >
+                                    <Strategies />
+                                </Suspense>
+                            </div>
+                        </div>
+
                         
 
                         <div
