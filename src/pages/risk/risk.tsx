@@ -26,7 +26,7 @@ const RiskManagementCalculator = () => {
         <div style={{ maxHeight: '100vh', overflowY: 'auto' }}>
             <div
                 style={{
-                    maxHeight: '80vh',
+                    maxHeight: '78vh',
                     width: '100vw',
                     padding: '10px',
                     fontFamily: "'Inter', sans-serif",
@@ -35,10 +35,10 @@ const RiskManagementCalculator = () => {
                     boxShadow: '0 15px 50px rgba(0,0,0,0.1)',
                     position: 'relative',
                     border: '1px solid rgba(255,255,255,0.3)',
-                    marginLeft: '50px',
                     overflowY: 'auto',
                     display: 'flex',
                     flexDirection: 'column',
+                    marginBottom: '50px',
 
                 }}
             >
