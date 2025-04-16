@@ -217,13 +217,13 @@ const RiskManagementCalculator = () => {
                             />
                             <ResultCard
                                 title="Take Profit"
-                                value={isCalculated ? `$${(capital * 0.3 * 0.1).toFixed(2)}` : '$0.00'}
+                                value={isCalculated ? `$${(capital * 3 * 0.1).toFixed(2)}` : '$0.00'}
                                 color="#2ecc71"
                                 icon="🎯"
                             />
                             <ResultCard
                                 title="Stop Loss"
-                                value={isCalculated ? `$${(capital * 0.1 * 0.3).toFixed(2)}` : '$0.00'}
+                                value={isCalculated ? `$${(capital * 3 * 0.1).toFixed(2)}` : '$0.00'}
                                 color="#e74c3c"
                                 icon="🛑"
                             />
