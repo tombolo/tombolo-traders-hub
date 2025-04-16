@@ -23,7 +23,62 @@ const Trade = () => {
             accentColor: "#4facfe",
             bgPattern: "diagonal-lines",
             tips: [
-                // ... (your tips content)
+                <div className="tip-content">
+                    <div className="warning-banner">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span>Requires automated tools - Not for manual trading!</span>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Requirements</h4>
+                        <ul className="diamond-list">
+                            <li>Use 1 tick duration</li>
+                            <li>Apply volatility: 100 / 75 / 50</li>
+                            <li>1s interval between entries</li>
+                            <li>Use rapid execution tools</li>
+                        </ul>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Trading Even</h4>
+                        <ul className="checkmark-list">
+                            <li>Green bar at EVEN digit (≥ 12.5%)</li>
+                            <li>At least three EVEN digits above 10.5%</li>
+                            <li>Red bar on EVEN digit below 9.5%</li>
+                        </ul>
+                        <div className="entry-point">
+                            <span>ENTRY:</span> Wait for two ODD digits, then GREEN bar on EVEN
+                        </div>
+                    </div>
+
+                    <div className="tip-section">
+                        <h4>Trading Odd</h4>
+                        <ul className="checkmark-list">
+                            <li>Green bar at ODD digit (≥ 12.5%)</li>
+                            <li>At least three ODD digits above 10.5%</li>
+                            <li>Red bar on ODD digit below 9.5%</li>
+                        </ul>
+                        <div className="entry-point">
+                            <span>ENTRY:</span> Wait for two EVEN digits, then GREEN bar on ODD
+                        </div>
+                    </div>
+
+                    <div className="pro-tip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                        <div>
+                            <strong>PRO TIP:</strong> Patience is key! Never rush the market – wait for perfect conditions.
+                        </div>
+                    </div>
+                </div>
+
             ]
         },
         evenOdd: {
