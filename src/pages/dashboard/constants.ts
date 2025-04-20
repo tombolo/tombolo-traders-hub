@@ -8,7 +8,7 @@ export type TSidebarItem = {
 
 export const SIDEBAR_INTRO = (): TSidebarItem[] => [
     {
-        label: localize('Welcome to Finest Bot!'),
+        label: localize('Welcome to NIlote Bot!'),
         content: [
             {
                 data: localize(

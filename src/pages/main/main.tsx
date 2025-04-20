@@ -175,9 +175,11 @@ const AppWrapper = observer(() => {
                                     <LabelPairedObjectsColumnCaptionRegularIcon
                                         height='24px'
                                         width='24px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                     />
-                                    <Localize i18n_default_text='Dashboard' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Dashboard
+                                    </span>
                                 </>
                             }
                             id='id-dbot-dashboard'
@@ -190,9 +192,11 @@ const AppWrapper = observer(() => {
                                     <LabelPairedPuzzlePieceTwoCaptionBoldIcon
                                         height='24px'
                                         width='24px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                     />
-                                    <Localize i18n_default_text='Bot Builder' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Bot Builder
+                                    </span>
                                 </>
                             }
                             id='id-bot-builder'
@@ -205,10 +209,12 @@ const AppWrapper = observer(() => {
                                     <FaChartLine
                                         height='16px'
                                         width='16px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='D Trader' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        D Trader
+                                    </span>
                                 </>
                             }
                             id='id-tutorials'
@@ -229,10 +235,12 @@ const AppWrapper = observer(() => {
                                     <FaChartBar
                                         height='16px'
                                         width='16px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='Finest Tool' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Nilote Tool
+                                    </span>
                                 </>
                             }
                             id='id-tutorials'
@@ -253,10 +261,12 @@ const AppWrapper = observer(() => {
                                     <FaPuzzlePiece
                                         height='16px'
                                         width='16px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='Trading View' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Trading View
+                                    </span>
                                 </>
                             }
                             id='id-tutorials'
@@ -276,10 +286,12 @@ const AppWrapper = observer(() => {
                                     <FaUsers
                                         height='16px'
                                         width='16px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='Copy Trading' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Copy Trading
+                                    </span>
                                 </>
                             }
                             id='id-tutorials'
@@ -301,10 +313,12 @@ const AppWrapper = observer(() => {
                                     <FaChessKnight
                                         height='16px'
                                         width='16px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='Strategy' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Strategy
+                                    </span>
                                 </>
                             }
                             id='id-tutorials'
@@ -319,16 +333,18 @@ const AppWrapper = observer(() => {
                         </div>
 
 
-                        <div
+                        <div 
                             label={
                                 <>
                                     <FaShieldAlt
                                         height='16px'
                                         width='16px'
-                                        fill='var(--text-general)'
+                                        fill='var(--text-general1)'
                                         className='icon-general-fill-g-path'
                                     />
-                                    <Localize i18n_default_text='Risk Management' />
+                                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
+                                        Risk Management
+                                    </span>
                                 </>
                             }
                             id='id-tutorials'

@@ -43,7 +43,7 @@ const BlocklyLoading = observer(() => {
 
     return (
         <div className={`bot__loading ${!is_loading ? 'fade-out' : ''}`} data-testid='blockly-loader'>
-            <div className="loading-text">Loading finest bot...</div>
+            <div className="loading-text">Loading Nilote bot...</div>
             <div className="progress-container">
                 <div
                     className="progress-bar"

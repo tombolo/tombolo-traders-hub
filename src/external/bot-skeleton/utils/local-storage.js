@@ -21,21 +21,37 @@ const fetchBotXml = async botName => {
 // Static bot definitions with async XML loading
 const getStaticBots = async () => {
     const [dollarMinerXml, dollarFlipperXml] = await Promise.all([
-        fetchBotXml('dollar_miner'),
-        fetchBotXml('dollar_flipper'),
+        fetchBotXml('nilote_mine'),
+        fetchBotXml('binary_smasher'),
+        fetchBotXml('binary_smasher_2'),
+        fetchBotXml('market_maven'),
     ]);
 
     return [
         {
-            id: 'dollar_miner',
-            name: 'Dollar Miner',
+            id: 'nilote_mine',
+            name: 'Nilote Mine V 3.5',
             xml: dollarMinerXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,
         },
         {
-            id: 'dollar_flipper',
-            name: 'Dollar Flipper',
+            id: 'binary_smasher',
+            name: 'Binary Smasher 1.0',
+            xml: dollarFlipperXml,
+            timestamp: Date.now(),
+            save_type: save_types.LOCAL,
+        },
+        {
+            id: 'binary_smasher_2',
+            name: 'Binary Smasher 2.0',
+            xml: dollarFlipperXml,
+            timestamp: Date.now(),
+            save_type: save_types.LOCAL,
+        },
+        {
+            id: 'market_maven',
+            name: 'Market Maven 1.0',
             xml: dollarFlipperXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,

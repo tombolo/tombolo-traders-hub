@@ -64,7 +64,7 @@ const DashboardBotList = observer(() => {
             <div className='bot-list__wrapper'>
                 <div className='bot-list__title'>
                     <Text size={isDesktop ? 's' : 'xs'} weight='bold'>
-                        <Localize i18n_default_text='Finest free bots:' />
+                        <Localize i18n_default_text='Nilote free bots:' />
                     </Text>
                 </div>
                 <div className='bot-list__header'>

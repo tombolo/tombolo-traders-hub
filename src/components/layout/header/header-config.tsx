@@ -62,7 +62,7 @@ export const platformsConfig: PlatformsConfig[] = [
 
 export const TRADERS_HUB_LINK_CONFIG = {
     as: 'a',
-    label: "Finest Traders",
+    label: "Nilote GramM",
 };
 
 export const MenuItems: MenuItemsConfig[] = [

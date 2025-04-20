@@ -10,7 +10,8 @@
 
 /* colors */
 $color-black: #0f0f11;
-$color-black-1: #1c1353;
+$color-black-1: #241c97;
+$color-blackie: #e9eef0;
 $color-gray-6: #3b3942;
 $color-black-3: #413c2b;
 $color-black-4: #27292a;
@@ -27,8 +28,8 @@ $color-blue-4: #0981c0;
 $color-blue-5: #e2ecff;
 $color-blue-6: #a0c4ff;
 $color-blue-7: #1f2a3b;
-$color-blue-8: #eef8ff;
-$color-blue-9: #dfe2f1;
+$color-blue-8: #fff8ee;
+$color-blue-9: #0F172A;
 $color-brown: #7a5020;
 $color-green: #1d1644;
 $color-green-1: #213780;
@@ -40,18 +41,18 @@ $color-green-6: #a58e27;
 $color-green-7: #ebfefb;
 $color-green-8: #d5e4e5;
 $color-grey: #8c84a7;
-$color-grey-1: #1b1ecf;
-$color-grey-2: #f5f6f7;
-$color-grey-3: #eceff0;
-$color-grey-4: #e9ecec;
-$color-grey-5: #dce0e1;
-$color-grey-6: #dcdcdc;
+$color-grey-1: #FFFFFF;
+$color-grey-2: #112131;
+$color-grey-3: #21657c;
+$color-grey-4: #209494;
+$color-grey-5: #14272c;
+$color-grey-6: #701a1a;
 $color-grey-7: #7a7a7a;
-$color-grey-8: #e0e0e0;
+$color-grey-8: #a85151;
 $color_grey-9: #909090;
 $color-grey-10: #9d9d9d;
 $color-grey-11: #fcfcfc;
-$color-grey-12: #f7f9fc;
+$color-grey-12: #19468a;
 $color-grey-13: #333333;
 $color-grey-14: #e5e8ea;
 $color-orange: #ff7855;
@@ -69,7 +70,7 @@ $color-red-9: #c03a41;
 $color-red-10: #110c57;
 $color-red-11: #fde8e8;
 $color-violet: #180c4b;
-$color-white: #ffffff;
+$color-white: #943535;
 $color-yellow: #ffba47;
 $color-yellow-1: #c08212;
 $color-yellow-2: #ffb31a;
@@ -85,7 +86,7 @@ $color-light-grey: #d3d3d3; // Light grey for readability
 $color-green-3: #4caf50; // Green for success
 $color-red-2: #e74c3c; // Red for errors/losses
 $color-red: hsl(251, 68%, 28%); // Brighter red variant
-$color-white: #ffffff; // White for text/icons
+$color-white: #dcdde7; // White for text/icons
 
 /* icons */
 $color-icon-light: $color-dark-navy;
