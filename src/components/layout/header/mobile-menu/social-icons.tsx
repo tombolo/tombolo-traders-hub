@@ -35,7 +35,7 @@ export const SocialIcons = () => {
     return (
         <div className="social-icons-container">
             <a
-                href="https://www.tiktok.com/@finestburu?_t=ZM-8v1BwN67d1L&_r=1"
+                href="https://www.tiktok.com/@nilote_gram?_t=ZM-8vkvoV9Hwf7&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon-link"
@@ -44,7 +44,7 @@ export const SocialIcons = () => {
                 <SVGIcon iconName="tiktok" className="social-icon tiktok-icon" />
             </a>
             <a
-                href="https://t.me/FinestTraders"
+                href="https://t.me/vviptraderswithnilote"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon-link"
@@ -53,7 +53,7 @@ export const SocialIcons = () => {
                 <SVGIcon iconName="telegram" className="social-icon telegram-icon" />
             </a>
             <a
-                href="https://www.instagram.com/finestburu?igsh=dXVwdzY1dDdhdGdm"
+                href="https://www.instagram.com/nilote_gramm"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon-link"
