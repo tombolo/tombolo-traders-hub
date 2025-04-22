@@ -144,11 +144,14 @@ const Trade = () => {
     }, []);
 
     return (
-        <div className="min-h-screen w-full" style={{
-            background: "linear-gradient(135deg, #0E0E2C 0%, #15153B 100%)",
-            fontFamily: "'Inter', sans-serif",
-            color: "#FFFFFF",
-            padding: "20px"
+        <div style={{
+            height: "100vh",
+            width: "100vw",
+            background: "linear-gradient(to bottom right, #f0f4ff, #e6f0ff)",
+            padding: "10px",
+            fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+            overflowY: "auto",
+            
         }}>
             {/* Notification */}
             {notification && (
@@ -156,24 +159,22 @@ const Trade = () => {
                     position: "fixed",
                     top: "20px",
                     right: "20px",
-                    padding: "16px 24px",
+                    padding: "16px",
                     borderRadius: "8px",
                     color: "white",
-                    backgroundColor: notification.type === 'success' ? "#4BB4B3" : "#FF444F",
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+                    backgroundColor: notification.type === 'success' ? "#4BB543" : "#ff3333",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                     zIndex: 1000,
                     animation: "fadeIn 0.3s ease-in-out",
                     display: "flex",
-                    alignItems: "center",
-                    backdropFilter: "blur(4px)",
-                    border: "1px solid rgba(255,255,255,0.1)"
+                    alignItems: "center"
                 }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         style={{
                             width: "20px",
                             height: "20px",
-                            marginRight: "12px",
+                            marginRight: "8px",
                             fill: "white"
                         }}
                         viewBox="0 0 24 24"
@@ -191,35 +192,33 @@ const Trade = () => {
             {/* Main Container */}
             <div style={{
                 maxWidth: "1200px",
-                minHeight: "700px",
+                height: "700px",
+                padding: "16px",
+                overflowY: "auto",
                 margin: "0 auto",
-                backgroundColor: "#1A1A3A",
-                borderRadius: "16px",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
-                overflow: "hidden",
-                border: "1px solid rgba(255,255,255,0.08)"
+                backgroundColor: "white",
+                borderRadius: "12px",
+                boxShadow: "0 8px 30px rgba(0,0,0,0.1)",
             }}>
                 {/* Header */}
                 <div style={{
-                    background: "linear-gradient(90deg, #2A3052 0%, #3E4C8B 100%)",
-                    padding: "28px 32px",
-                    color: "white",
-                    borderBottom: "1px solid rgba(255,255,255,0.1)"
+                    background: "linear-gradient(to right, #4f46e5, #6366f1)",
+                    padding: "24px",
+                    color: "white"
                 }}>
                     <h1 style={{
-                        fontSize: "28px",
-                        fontWeight: "700",
+                        fontSize: "24px",
+                        fontWeight: "600",
                         margin: "0",
                         display: "flex",
-                        alignItems: "center",
-                        letterSpacing: "0.5px"
+                        alignItems: "center"
                     }}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             style={{
-                                width: "32px",
-                                height: "32px",
-                                marginRight: "16px"
+                                width: "28px",
+                                height: "28px",
+                                marginRight: "12px"
                             }}
                             fill="none"
                             viewBox="0 0 24 24"
@@ -227,50 +226,45 @@ const Trade = () => {
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
-                        Deriv Copy Trading Panel
+                        Copy Trading Panel
                     </h1>
                     <p style={{
-                        margin: "12px 0 0",
-                        opacity: "0.8",
-                        fontSize: "16px",
-                        fontWeight: "300"
+                        margin: "8px 0 0",
+                        opacity: "0.9",
+                        fontSize: "14px"
                     }}>Automatically copy trades from expert traders</p>
                 </div>
 
                 {/* Connection Status */}
                 <div style={{
-                    padding: "18px 32px",
-                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                    padding: "16px 24px",
+                    borderBottom: "1px solid #e5e7eb",
                     display: "flex",
-                    alignItems: "center",
-                    background: "rgba(255,255,255,0.03)"
+                    alignItems: "center"
                 }}>
                     <div style={{
-                        height: "14px",
-                        width: "14px",
+                        height: "12px",
+                        width: "12px",
                         borderRadius: "50%",
-                        marginRight: "14px",
-                        backgroundColor: isConnected ? "#4BB4B3" : "#FF444F",
-                        boxShadow: `0 0 8px ${isConnected ? "rgba(75, 180, 179, 0.5)" : "rgba(255, 68, 79, 0.5)"}`
+                        marginRight: "12px",
+                        backgroundColor: isConnected ? "#10B981" : "#EF4444"
                     }}></div>
                     <span style={{
-                        fontSize: "15px",
-                        color: "#FFFFFF",
-                        fontWeight: "500"
-                    }}>{isConnected ? 'Connected to Deriv WebSocket' : 'Disconnected - Please refresh'}</span>
+                        fontSize: "14px",
+                        color: "#4B5563"
+                    }}>{isConnected ? 'Connected to Deriv Copy Trading' : 'Disconnected please refresh'}</span>
                 </div>
 
                 {/* Main Content */}
-                <div style={{ padding: "32px" }}>
+                <div style={{ padding: "24px" }}>
                     {/* Token Input */}
-                    <div style={{ marginBottom: "32px" }}>
+                    <div style={{ marginBottom: "24px" }}>
                         <label style={{
                             display: "block",
-                            fontSize: "16px",
+                            fontSize: "14px",
                             fontWeight: "500",
-                            color: "#FFFFFF",
-                            marginBottom: "12px",
-                            opacity: "0.9"
+                            color: "#374151",
+                            marginBottom: "8px"
                         }}>
                             Trader Token
                         </label>
@@ -281,24 +275,13 @@ const Trade = () => {
                             onChange={(e) => setTraderToken(e.target.value)}
                             style={{
                                 width: "100%",
-                                padding: "16px 20px",
-                                border: "1px solid rgba(255,255,255,0.1)",
-                                borderRadius: "12px",
+                                padding: "12px 16px",
+                                border: "1px solid #D1D5DB",
+                                borderRadius: "8px",
                                 fontSize: "16px",
                                 outline: "none",
-                                transition: "all 0.3s ease",
-                                boxSizing: "border-box",
-                                backgroundColor: "rgba(255,255,255,0.05)",
-                                color: "#FFFFFF",
-                                backdropFilter: "blur(4px)"
-                            }}
-                            onFocus={(e) => {
-                                e.target.style.borderColor = "#7A91FF";
-                                e.target.style.boxShadow = "0 0 0 3px rgba(122, 145, 255, 0.2)";
-                            }}
-                            onBlur={(e) => {
-                                e.target.style.borderColor = "rgba(255,255,255,0.1)";
-                                e.target.style.boxShadow = "none";
+                                transition: "border-color 0.2s",
+                                boxSizing: "border-box"
                             }}
                         />
                     </div>
@@ -307,42 +290,26 @@ const Trade = () => {
                     <div style={{
                         display: "flex",
                         flexDirection: "row",
-                        gap: "20px",
-                        marginBottom: "32px"
+                        gap: "16px",
+                        marginBottom: "24px"
                     }}>
                         <button
                             onClick={startCopyTrading}
                             disabled={!isConnected || copying || isLoading}
                             style={{
                                 flex: 1,
-                                padding: "18px",
-                                borderRadius: "12px",
-                                fontWeight: "600",
+                                padding: "14px",
+                                borderRadius: "8px",
+                                fontWeight: "500",
                                 fontSize: "16px",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
                                 cursor: (!isConnected || copying || isLoading) ? "not-allowed" : "pointer",
-                                background: (!isConnected || copying || isLoading) ?
-                                    "linear-gradient(135deg, rgba(74, 95, 179, 0.3) 0%, rgba(58, 71, 133, 0.3) 100%)" :
-                                    "linear-gradient(135deg, #4BB4B3 0%, #3E8C8B 100%)",
-                                color: "white",
+                                backgroundColor: (!isConnected || copying || isLoading) ? "#E5E7EB" : "#10B981",
+                                color: (!isConnected || copying || isLoading) ? "#9CA3AF" : "white",
                                 border: "none",
-                                transition: "all 0.3s ease",
-                                boxShadow: (!isConnected || copying || isLoading) ? "none" : "0 4px 15px rgba(75, 180, 179, 0.3)",
-                                opacity: (!isConnected || copying || isLoading) ? 0.7 : 1
-                            }}
-                            onMouseOver={(e) => {
-                                if (!(!isConnected || copying || isLoading)) {
-                                    e.currentTarget.style.transform = "translateY(-2px)";
-                                    e.currentTarget.style.boxShadow = "0 6px 20px rgba(75, 180, 179, 0.4)";
-                                }
-                            }}
-                            onMouseOut={(e) => {
-                                if (!(!isConnected || copying || isLoading)) {
-                                    e.currentTarget.style.transform = "translateY(0)";
-                                    e.currentTarget.style.boxShadow = "0 4px 15px rgba(75, 180, 179, 0.3)";
-                                }
+                                transition: "background-color 0.2s"
                             }}
                         >
                             {isLoading ? (
@@ -350,9 +317,9 @@ const Trade = () => {
                                     <svg
                                         style={{
                                             animation: "spin 1s linear infinite",
-                                            width: "22px",
-                                            height: "22px",
-                                            marginRight: "12px"
+                                            width: "20px",
+                                            height: "20px",
+                                            marginRight: "8px"
                                         }}
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -368,9 +335,9 @@ const Trade = () => {
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         style={{
-                                            width: "22px",
-                                            height: "22px",
-                                            marginRight: "12px"
+                                            width: "20px",
+                                            height: "20px",
+                                            marginRight: "8px"
                                         }}
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
@@ -387,34 +354,18 @@ const Trade = () => {
                             disabled={!isConnected || !copying || isLoading}
                             style={{
                                 flex: 1,
-                                padding: "18px",
-                                borderRadius: "12px",
-                                fontWeight: "600",
+                                padding: "14px",
+                                borderRadius: "8px",
+                                fontWeight: "500",
                                 fontSize: "16px",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
                                 cursor: (!isConnected || !copying || isLoading) ? "not-allowed" : "pointer",
-                                background: (!isConnected || !copying || isLoading) ?
-                                    "linear-gradient(135deg, rgba(255, 68, 79, 0.3) 0%, rgba(200, 50, 60, 0.3) 100%)" :
-                                    "linear-gradient(135deg, #FF444F 0%, #D63A45 100%)",
-                                color: "white",
+                                backgroundColor: (!isConnected || !copying || isLoading) ? "#EF4444" : "#EF4444",
+                                color: (!isConnected || !copying || isLoading) ? "white" : "white",
                                 border: "none",
-                                transition: "all 0.3s ease",
-                                boxShadow: (!isConnected || !copying || isLoading) ? "none" : "0 4px 15px rgba(255, 68, 79, 0.3)",
-                                opacity: (!isConnected || !copying || isLoading) ? 0.7 : 1
-                            }}
-                            onMouseOver={(e) => {
-                                if (!(!isConnected || !copying || isLoading)) {
-                                    e.currentTarget.style.transform = "translateY(-2px)";
-                                    e.currentTarget.style.boxShadow = "0 6px 20px rgba(255, 68, 79, 0.4)";
-                                }
-                            }}
-                            onMouseOut={(e) => {
-                                if (!(!isConnected || !copying || isLoading)) {
-                                    e.currentTarget.style.transform = "translateY(0)";
-                                    e.currentTarget.style.boxShadow = "0 4px 15px rgba(255, 68, 79, 0.3)";
-                                }
+                                transition: "background-color 0.2s"
                             }}
                         >
                             {isLoading ? (
@@ -422,9 +373,9 @@ const Trade = () => {
                                     <svg
                                         style={{
                                             animation: "spin 1s linear infinite",
-                                            width: "22px",
-                                            height: "22px",
-                                            marginRight: "12px"
+                                            width: "20px",
+                                            height: "20px",
+                                            marginRight: "8px"
                                         }}
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -440,9 +391,9 @@ const Trade = () => {
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         style={{
-                                            width: "22px",
-                                            height: "22px",
-                                            marginRight: "12px"
+                                            width: "20px",
+                                            height: "20px",
+                                            marginRight: "8px"
                                         }}
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
@@ -457,29 +408,26 @@ const Trade = () => {
 
                     {/* Status Card */}
                     <div style={{
-                        background: "linear-gradient(135deg, rgba(42, 48, 82, 0.5) 0%, rgba(30, 35, 64, 0.5) 100%)",
-                        padding: "24px",
-                        borderRadius: "16px",
-                        border: "1px solid rgba(255,255,255,0.1)",
-                        boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-                        backdropFilter: "blur(8px)"
+                        backgroundColor: "#F9FAFB",
+                        padding: "20px",
+                        borderRadius: "8px",
+                        border: "1px solid #E5E7EB"
                     }}>
                         <h2 style={{
-                            fontSize: "20px",
+                            fontSize: "18px",
                             fontWeight: "600",
-                            color: "#FFFFFF",
-                            marginBottom: "20px",
+                            color: "#1F2937",
+                            marginBottom: "16px",
                             display: "flex",
-                            alignItems: "center",
-                            letterSpacing: "0.3px"
+                            alignItems: "center"
                         }}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 style={{
-                                    width: "24px",
-                                    height: "24px",
-                                    marginRight: "12px",
-                                    color: "#7A91FF"
+                                    width: "20px",
+                                    height: "20px",
+                                    marginRight: "8px",
+                                    color: "#4F46E5"
                                 }}
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
@@ -488,30 +436,28 @@ const Trade = () => {
                             </svg>
                             Current Status
                         </h2>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                             <div style={{ display: "flex", alignItems: "center" }}>
                                 <div style={{
-                                    height: "14px",
-                                    width: "14px",
+                                    height: "12px",
+                                    width: "12px",
                                     borderRadius: "50%",
-                                    marginRight: "14px",
-                                    backgroundColor: copying ? "#4BB4B3" : "#7A91FF",
-                                    boxShadow: copying ? "0 0 8px rgba(75, 180, 179, 0.5)" : "0 0 8px rgba(122, 145, 255, 0.5)"
+                                    marginRight: "12px",
+                                    backgroundColor: copying ? "#10B981" : "#9CA3AF"
                                 }}></div>
-                                <span style={{ color: "#FFFFFF", opacity: "0.9" }}>
+                                <span style={{ color: "#4B5563" }}>
                                     {copying ? 'Currently copying trades' : 'Not currently copying'}
                                 </span>
                             </div>
                             <div style={{ display: "flex", alignItems: "center" }}>
                                 <div style={{
-                                    height: "14px",
-                                    width: "14px",
+                                    height: "12px",
+                                    width: "12px",
                                     borderRadius: "50%",
-                                    marginRight: "14px",
-                                    backgroundColor: isConnected ? "#4BB4B3" : "#FF444F",
-                                    boxShadow: isConnected ? "0 0 8px rgba(75, 180, 179, 0.5)" : "0 0 8px rgba(255, 68, 79, 0.5)"
+                                    marginRight: "12px",
+                                    backgroundColor: isConnected ? "#10B981" : "#9CA3AF"
                                 }}></div>
-                                <span style={{ color: "#FFFFFF", opacity: "0.9" }}>
+                                <span style={{ color: "#4B5563" }}>
                                     {isConnected ? 'Copy Trading connection active' : 'Copy Trading disconnected'}
                                 </span>
                             </div>
@@ -521,13 +467,12 @@ const Trade = () => {
 
                 {/* Footer */}
                 <div style={{
-                    backgroundColor: "rgba(0,0,0,0.2)",
-                    padding: "20px 32px",
+                    backgroundColor: "#F9FAFB",
+                    padding: "16px 24px",
                     textAlign: "center",
-                    fontSize: "14px",
-                    color: "rgba(255,255,255,0.6)",
-                    borderTop: "1px solid rgba(255,255,255,0.08)",
-                    fontWeight: "300"
+                    fontSize: "12px",
+                    color: "#6B7280",
+                    borderTop: "1px solid #E5E7EB"
                 }}>
                     <p>Ensure you have proper authorization before starting copy trading</p>
                 </div>

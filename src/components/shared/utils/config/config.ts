@@ -2,6 +2,7 @@ import { LocalStorageConstants, LocalStorageUtils, URLUtils } from '@deriv-com/u
 
 export const APP_IDS = {
     LOCALHOST: 70344,
+    LOCALHOST_IP: 70344,
     TMP_STAGING: 70344,
     STAGING: 70344,
     STAGING_BE: 70344,
@@ -28,6 +29,7 @@ export const domain_app_ids = {
     'ngrok-free.app': APP_IDS.NGROK,
     'netlify.app': APP_IDS.NETLIFY,
     'finesttraders.com': APP_IDS.FINESTTRADERS,
+    '192.168.1.65': APP_IDS.LOCALHOST_IP,
 };
 
 export const getCurrentProductionDomain = () =>
@@ -38,6 +40,7 @@ export const isProduction = () => {
     const all_domains = Object.keys(domain_app_ids).map(domain => `(www\\.)?${domain.replace('.', '\\.')}`);
     return new RegExp(`^(${all_domains.join('|')})$`, 'i').test(window.location.hostname);
 };
+
 
 export const isTestLink = () => {
     return (
