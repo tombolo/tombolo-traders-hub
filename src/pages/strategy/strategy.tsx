@@ -1,4 +1,5 @@
-import { useState } from 'react';
+"use client";
+import React, { useState } from 'react';
 import './strategy.css';
 
 const Trade = () => {
@@ -78,7 +79,6 @@ const Trade = () => {
                         </div>
                     </div>
                 </div>
-
             ]
         },
         evenOdd: {
@@ -220,7 +220,6 @@ const Trade = () => {
                         </div>
                     </div>
                 </div>
-
             ]
         },
         breakout: {
@@ -278,7 +277,6 @@ const Trade = () => {
                         </div>
                     </div>
                 </div>
-
             ]
         },
         scalping: {
@@ -336,7 +334,6 @@ const Trade = () => {
                         </div>
                     </div>
                 </div>
-
             ]
         }
     };
@@ -371,7 +368,10 @@ const Trade = () => {
                                 onMouseEnter={() => setHoveredCard(key)}
                                 onMouseLeave={() => setHoveredCard(null)}
                                 className={`strategy-card ${strategy.bgPattern} ${hoveredCard === key ? 'hovered' : ''}`}
-                                style={{ '--accent-color': strategy.accentColor }}
+                                style={{
+                                    '--accent-color': strategy.accentColor,
+                                    '--gradient': strategy.gradient
+                                }}
                             >
                                 <div className="card-glow" style={{ background: strategy.gradient }}></div>
                                 <div className="card-content">

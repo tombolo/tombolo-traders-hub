@@ -23,137 +23,173 @@ const RiskManagementCalculator = () => {
     };
 
     return (
-        <div style={{ maxHeight: '100vh', overflowY: 'auto' }}>
-            <div
-                style={{
-                    maxHeight: '78vh',
-                    width: '100vw',
-                    padding: '10px',
-                    fontFamily: "'Inter', sans-serif",
-                    background: 'linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%)',
-                    borderRadius: '5px',
-                    boxShadow: '0 15px 50px rgba(0,0,0,0.1)',
-                    position: 'relative',
-                    border: '1px solid rgba(255,255,255,0.3)',
-                    overflowY: 'auto',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    marginBottom: '50px',
+        <div style={{
+            height: '80vh',
+            width: '100vw',
+            background: 'radial-gradient(circle at 10% 20%, rgba(42,48,82,0.9) 0%, rgba(10,14,44,0.9) 90%)',
+            padding: '2rem',
+            position: 'relative',
+            overflowY: 'auto',
+        }}>
+            {/* Background elements */}
+            <div style={{
+                position: 'absolute',
+                top: '20%',
+                left: '10%',
+                width: '400px',
+                height: '400px',
+                background: 'rgba(74, 95, 179, 0.15)',
+                borderRadius: '50%',
+                filter: 'blur(60px)',
+                animation: 'float 8s ease-in-out infinite',
+                zIndex: 0
+            }}></div>
+            <div style={{
+                position: 'absolute',
+                top: '60%',
+                right: '10%',
+                width: '300px',
+                height: '300px',
+                background: 'rgba(255, 68, 79, 0.15)',
+                borderRadius: '50%',
+                filter: 'blur(60px)',
+                animation: 'float 10s ease-in-out infinite 2s',
+                zIndex: 0
+            }}></div>
 
-                }}
-            >
-                <h1
-                    style={{
-                        textAlign: 'center',
-                        color: '#2c3e50',
-                        marginBottom: '30px',
-                        fontWeight: '700',
-                        fontSize: '1.8rem',
-                    }}
-                >
+            <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                backgroundColor: 'rgba(42, 48, 82, 0.8)',
+                borderRadius: '20px',
+                padding: '2rem',
+                position: 'relative',
+                zIndex: 1,
+                border: '1px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.3)',
+                backdropFilter: 'blur(10px)'
+            }}>
+                <h1 style={{
+                    textAlign: 'center',
+                    marginBottom: '2rem',
+                    background: 'linear-gradient(90deg, #FFFFFF 0%, #E2E8F0 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontSize: '2.5rem',
+                    fontWeight: '700',
+                    position: 'relative'
+                }}>
                     Risk Management Calculator
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '-10px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '100px',
+                        height: '4px',
+                        background: 'linear-gradient(90deg, #4A5FB3 0%, #4BB4B3 100%)',
+                        borderRadius: '2px'
+                    }}></div>
                 </h1>
 
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        gap: '30px',
-                        flexWrap: 'wrap',
-                    }}
-                >
-
-
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: '2rem',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center'
+                }}>
                     {/* Input Column */}
-                    <div
-                        style={{
-                            flex: '1 1 300px',
-                            backgroundColor: 'rgba(255,255,255,0.8)',
-                            borderRadius: '15px',
-                            padding: '25px',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                            backdropFilter: 'blur(5px)',
-                            border: '1px solid rgba(255,255,255,0.5)',
-                        }}
-                    >
-                        <label
-                            style={{
-                                display: 'block',
-                                marginBottom: '8px',
-                                fontWeight: '600',
-                                color: '#34495e',
-                                fontSize: '0.9rem',
-                            }}
-                        >
+                    <div style={{
+                        flex: '1 1 300px',
+                        backgroundColor: 'rgba(30, 36, 64, 0.6)',
+                        borderRadius: '16px',
+                        padding: '2rem',
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                        border: '1px solid rgba(255,255,255,0.05)'
+                    }}>
+                        <label style={{
+                            display: 'block',
+                            marginBottom: '1rem',
+                            fontWeight: '600',
+                            color: '#E2E8F0',
+                            fontSize: '1rem'
+                        }}>
                             Enter Your Capital ($)
                         </label>
-                        <div
-                            style={{
-                                padding: '15px 20px',
-                                borderRadius: '10px',
-                                border: '1px solid #ddd',
-                                fontSize: '20px',
-                                backgroundColor: 'white',
-                                marginBottom: '10px',
-                                textAlign: 'right',
-                                fontWeight: '600',
-                                color: '#2c3e50',
-                                height: '60px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'flex-end',
-                            }}
-                        >
+                        <div style={{
+                            padding: '1rem',
+                            borderRadius: '10px',
+                            border: '1px solid rgba(255,255,255,0.1)',
+                            fontSize: '1.5rem',
+                            backgroundColor: 'rgba(255,255,255,0.05)',
+                            marginBottom: '1.5rem',
+                            textAlign: 'right',
+                            fontWeight: '600',
+                            color: '#FFFFFF',
+                            height: '60px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'flex-end'
+                        }}>
                             {capital ? `$${capital}` : '$0'}
                         </div>
 
                         {/* Keypad */}
-                        <div
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(3, 1fr)',
-                                gap: '10px',
-                                marginBottom: '20px',
-                            }}
-                        >
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: '10px',
+                            marginBottom: '1.5rem'
+                        }}>
                             {[1, 2, 3, 4, 5, 6, 7, 8, 9, '.', 0, '⌫'].map((item) => (
                                 <button
                                     key={item}
                                     onClick={() => (item === '⌫' ? deleteLast() : appendNumber(item))}
                                     style={{
-                                        padding: '15px',
-                                        fontSize: '18px',
+                                        padding: '1rem',
+                                        fontSize: '1.2rem',
                                         fontWeight: '600',
                                         borderRadius: '10px',
                                         border: 'none',
-                                        background:
-                                            typeof item === 'number' || item === '.'
-                                                ? 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)'
-                                                : 'linear-gradient(135deg, #f1f3f5 0%, #dee2e6 100%)',
-                                        color: '#2c3e50',
+                                        background: typeof item === 'number' || item === '.'
+                                            ? 'rgba(255,255,255,0.1)'
+                                            : 'rgba(255,68,79,0.2)',
+                                        color: '#FFFFFF',
                                         cursor: 'pointer',
-                                        boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
                                     }}
+                                    onMouseEnter={(e) => e.currentTarget.style.background = typeof item === 'number' || item === '.'
+                                        ? 'rgba(255,255,255,0.2)'
+                                        : 'rgba(255,68,79,0.3)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = typeof item === 'number' || item === '.'
+                                        ? 'rgba(255,255,255,0.1)'
+                                        : 'rgba(255,68,79,0.2)'}
                                 >
                                     {item}
                                 </button>
                             ))}
                         </div>
 
-                        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             <button
                                 onClick={calculateResults}
                                 style={{
                                     flex: '1 1 45%',
-                                    padding: '15px',
-                                    background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
+                                    padding: '1rem',
+                                    background: 'linear-gradient(135deg, #4A5FB3 0%, #4BB4B3 100%)',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '10px',
-                                    fontSize: '16px',
+                                    fontSize: '1rem',
                                     fontWeight: '600',
                                     cursor: 'pointer',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 4px 15px rgba(74, 95, 179, 0.3)'
                                 }}
+                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                             >
                                 Calculate Risk
                             </button>
@@ -161,15 +197,19 @@ const RiskManagementCalculator = () => {
                                 onClick={resetCalculator}
                                 style={{
                                     flex: '1 1 45%',
-                                    padding: '15px',
-                                    background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
+                                    padding: '1rem',
+                                    background: 'linear-gradient(135deg, #FF444F 0%, #C0392B 100%)',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '10px',
-                                    fontSize: '16px',
+                                    fontSize: '1rem',
                                     fontWeight: '600',
                                     cursor: 'pointer',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 4px 15px rgba(255, 68, 79, 0.3)'
                                 }}
+                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                             >
                                 Clear
                             </button>
@@ -177,147 +217,162 @@ const RiskManagementCalculator = () => {
                     </div>
 
                     {/* Results Column */}
-                    <div
-                        style={{
-                            flex: '1 1 300px',
-                            backgroundColor: 'rgba(255,255,255,0.8)',
-                            borderRadius: '15px',
-                            padding: '25px',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                            backdropFilter: 'blur(5px)',
-                            border: '1px solid rgba(255,255,255,0.5)',
-                        }}
-                    >
-                        <h2
-                            style={{
-                                color: '#2c3e50',
-                                marginTop: '0',
-                                marginBottom: '20px',
-                                textAlign: 'center',
-                                fontSize: '1.4rem',
-                                fontWeight: '600',
-                            }}
-                        >
+                    <div style={{
+                        flex: '1 1 300px',
+                        backgroundColor: 'rgba(30, 36, 64, 0.6)',
+                        borderRadius: '16px',
+                        padding: '2rem',
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                        border: '1px solid rgba(255,255,255,0.05)'
+                    }}>
+                        <h2 style={{
+                            color: '#FFFFFF',
+                            marginTop: '0',
+                            marginBottom: '1.5rem',
+                            textAlign: 'center',
+                            fontSize: '1.5rem',
+                            fontWeight: '600'
+                        }}>
                             Risk Management Plan
                         </h2>
 
-                        <div
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: '1fr 1fr',
-                                gap: '15px',
-                                marginBottom: '20px',
-                            }}
-                        >
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr',
+                            gap: '1rem',
+                            marginBottom: '1.5rem'
+                        }}>
                             <ResultCard
                                 title="Stake Amount"
                                 value={isCalculated ? `$${(capital * 0.1).toFixed(2)}` : '$0.00'}
-                                color="#3498db"
+                                color="#4A5FB3"
                                 icon="💰"
                             />
                             <ResultCard
                                 title="Take Profit"
                                 value={isCalculated ? `$${(capital * 3 * 0.1).toFixed(2)}` : '$0.00'}
-                                color="#2ecc71"
+                                color="#4BB4B3"
                                 icon="🎯"
                             />
                             <ResultCard
                                 title="Stop Loss"
                                 value={isCalculated ? `$${(capital * 3 * 0.1).toFixed(2)}` : '$0.00'}
-                                color="#e74c3c"
+                                color="#FF444F"
                                 icon="🛑"
                             />
                             <ResultCard
                                 title="Loss Protection"
                                 value="3 Trades"
-                                color="#9b59b6"
+                                color="#A18CD1"
                                 icon="🛡️"
                             />
                         </div>
 
-                        <div
-                            style={{
-                                backgroundColor: 'rgba(241,196,15,0.1)',
-                                padding: '15px',
-                                borderRadius: '10px',
-                                borderLeft: '4px solid #f1c40f',
-                                marginBottom: '15px',
-                            }}
-                        >
-                            <div
-                                style={{
-                                    color: '#7f8c8d',
-                                    fontSize: '0.8rem',
-                                    fontWeight: '600',
-                                    marginBottom: '8px',
-                                }}
-                            >
-                                Martingale Sequence (x2)
+                        <div style={{
+                            backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                            padding: '1.5rem',
+                            borderRadius: '10px',
+                            borderLeft: '4px solid rgba(255, 193, 7, 0.7)',
+                            marginBottom: '1.5rem'
+                        }}>
+                            <div style={{
+                                color: '#E2E8F0',
+                                fontSize: '0.9rem',
+                                fontWeight: '600',
+                                marginBottom: '0.5rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                            }}>
+                                <span>⚠️</span> Martingale Sequence (x2)
                             </div>
-                            <div
-                                style={{
-                                    fontSize: '1.1rem',
-                                    fontWeight: '600',
-                                    color: '#2c3e50',
-                                    padding: '15px',
-                                    backgroundColor: 'rgba(255,255,255,0.7)',
-                                    borderRadius: '8px',
-                                    textAlign: 'center',
-                                    border: '1px dashed rgba(241,196,15,0.5)',
-                                }}
-                            >
+                            <div style={{
+                                fontSize: '1.1rem',
+                                fontWeight: '600',
+                                color: '#FFFFFF',
+                                padding: '1rem',
+                                backgroundColor: 'rgba(255,255,255,0.1)',
+                                borderRadius: '8px',
+                                textAlign: 'center',
+                                border: '1px dashed rgba(255, 193, 7, 0.3)'
+                            }}>
                                 {isCalculated
                                     ? `${(capital * 0.02).toFixed(2)} → ${(capital * 0.04).toFixed(2)} → ${(capital * 0.08).toFixed(2)}`
                                     : 'Enter amount to calculate'}
                             </div>
                         </div>
 
-                        <div
-                            style={{
-                                backgroundColor: 'rgba(52,73,94,0.1)',
-                                padding: '15px',
-                                borderRadius: '10px',
-                                borderLeft: '4px solid #34495e',
-                            }}
-                        >
-                            <div style={{ color: '#7f8c8d', fontSize: '0.8rem', fontWeight: '600' }}>
-                                Required Capital Buffer
+                        <div style={{
+                            backgroundColor: 'rgba(74, 95, 179, 0.1)',
+                            padding: '1.5rem',
+                            borderRadius: '10px',
+                            borderLeft: '4px solid #4A5FB3'
+                        }}>
+                            <div style={{
+                                color: '#E2E8F0',
+                                fontSize: '0.9rem',
+                                fontWeight: '600',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                            }}>
+                                <span>💼</span> Required Capital Buffer
                             </div>
-                            <div style={{ fontSize: '1.3rem', fontWeight: '700', color: '#2c3e50' }}>
+                            <div style={{
+                                fontSize: '1.5rem',
+                                fontWeight: '700',
+                                color: '#FFFFFF',
+                                marginTop: '0.5rem'
+                            }}>
                                 {isCalculated ? `$${(capital * 0.02 * 7).toFixed(2)}` : '$0.00'}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-20px); }
+                    100% { transform: translateY(0px); }
+                }
+            `}</style>
         </div>
     );
 };
 
-const ResultCard = ({ title, value, color, icon }) => (
-    <div
-        style={{
-            backgroundColor: `rgba(${hexToRgb(color)},0.1)`,
-            padding: '15px',
+const ResultCard = ({ title, value, color, icon }) => {
+    const rgb = hexToRgb(color);
+    return (
+        <div style={{
+            backgroundColor: `rgba(${rgb},0.1)`,
+            padding: '1rem',
             borderRadius: '10px',
             borderLeft: `4px solid ${color}`,
-        }}
-    >
-        <div
-            style={{
-                color: '#7f8c8d',
-                fontSize: '0.8rem',
+            transition: 'all 0.3s ease'
+        }}>
+            <div style={{
+                color: '#E2E8F0',
+                fontSize: '0.9rem',
                 fontWeight: '600',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '5px',
-            }}
-        >
-            <span>{icon}</span> {title}
+                gap: '0.5rem',
+                marginBottom: '0.5rem'
+            }}>
+                <span>{icon}</span> {title}
+            </div>
+            <div style={{
+                fontSize: '1.3rem',
+                fontWeight: '700',
+                color: '#FFFFFF'
+            }}>
+                {value}
+            </div>
         </div>
-        <div style={{ fontSize: '1.3rem', fontWeight: '700', color: '#2c3e50' }}>{value}</div>
-    </div>
-);
+    );
+};
 
 function hexToRgb(hex) {
     const bigint = parseInt(hex.replace('#', ''), 16);
