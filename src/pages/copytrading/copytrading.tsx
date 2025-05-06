@@ -3,7 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const CopyTradingPage = () => {
-    const [token, setToken] = useState('');
+    const [copierToken, setCopierToken] = useState('');
+    const [traderToken, setTraderToken] = useState('');
     const [response, setResponse] = useState<any>(null);
     const [isConnected, setIsConnected] = useState(false);
     const wsRef = useRef<WebSocket | null>(null);
@@ -26,8 +27,8 @@ const CopyTradingPage = () => {
 
         wsRef.current.onopen = () => {
             setIsConnected(true);
-            if (token.trim()) {
-                wsRef.current?.send(JSON.stringify({ authorize: token.trim() }));
+            if (copierToken.trim()) {
+                wsRef.current?.send(JSON.stringify({ authorize: copierToken.trim() }));
             }
             onOpenCallback?.();
         };
@@ -38,16 +39,16 @@ const CopyTradingPage = () => {
             const data = JSON.parse(event.data);
             setResponse(data);
 
-            // Handle errors on authorization
             if (data.msg_type === 'authorize') {
                 if (data.error) {
                     alert('Authorization failed: ' + data.error.message);
-                } else {
-                    enableCopyPermission(); // Enable copy permission after successful auth
                 }
             }
 
-            // Optional: show a message on settings update
+            if (data.msg_type === 'copy_start' && data.error) {
+                alert('Copy start error: ' + data.error.message);
+            }
+
             if (data.msg_type === 'set_settings') {
                 if (!data.error) {
                     alert('Copy trading permission enabled.');
@@ -58,24 +59,15 @@ const CopyTradingPage = () => {
         };
     };
 
-    const enableCopyPermission = () => {
-        const request = {
-            set_settings: 1,
-            allow_copiers: 1,
-            req_id: Date.now(),
-        };
-        wsRef.current?.send(JSON.stringify(request));
-    };
-
     const startCopyTrading = () => {
-        if (!/^[\w\s-]{15,32}$/.test(token.trim())) {
-            alert('Invalid token. Token must be between 15 and 32 characters and only contain letters, numbers, spaces, or hyphens.');
+        if (!copierToken.trim() || !traderToken.trim()) {
+            alert('Both copier and trader tokens are required.');
             return;
         }
 
         connectWebSocket(() => {
             const request = {
-                copy_start: token.trim(),
+                copy_start: traderToken.trim(),
                 req_id: Date.now(),
             };
             wsRef.current?.send(JSON.stringify(request));
@@ -83,9 +75,14 @@ const CopyTradingPage = () => {
     };
 
     const stopCopyTrading = () => {
+        if (!copierToken.trim() || !traderToken.trim()) {
+            alert('Both copier and trader tokens are required.');
+            return;
+        }
+
         connectWebSocket(() => {
             const request = {
-                copy_stop: token.trim(),
+                copy_stop: traderToken.trim(),
                 req_id: Date.now(),
             };
             wsRef.current?.send(JSON.stringify(request));
@@ -93,7 +90,7 @@ const CopyTradingPage = () => {
     };
 
     return (
-        <div style={{ padding: '32px', maxWidth: '600px', margin: '0 auto', fontFamily: 'Arial, sans-serif', overflowY: 'auto' }}>
+        <div style={{ padding: '32px', maxWidth: '600px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
             <h1 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '20px' }}>Copy Trading</h1>
 
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
@@ -116,12 +113,25 @@ const CopyTradingPage = () => {
                     marginBottom: '12px',
                     border: '1px solid #888',
                     borderRadius: '4px',
-                    backgroundColor: '#f9fafb',
-                    color: '#111',
+                    backgroundColor: 'black',
+                }}
+                placeholder="Copier Token"
+                value={copierToken}
+                onChange={(e) => setCopierToken(e.target.value)}
+            />
+
+            <input
+                style={{
+                    width: '100%',
+                    padding: '10px',
+                    marginBottom: '12px',
+                    border: '1px solid #888',
+                    borderRadius: '4px',
+                    backgroundColor: 'black',
                 }}
                 placeholder="Trader Token"
-                value={token}
-                onChange={(e) => setToken(e.target.value)}
+                value={traderToken}
+                onChange={(e) => setTraderToken(e.target.value)}
             />
 
             <div style={{ display: 'flex', gap: '12px', marginBottom: '24px' }}>
@@ -140,6 +150,7 @@ const CopyTradingPage = () => {
                 >
                     Start Copy
                 </button>
+
                 <button
                     onClick={stopCopyTrading}
                     style={{
