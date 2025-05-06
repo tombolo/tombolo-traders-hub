@@ -239,7 +239,7 @@ const AppWrapper = observer(() => {
                                         className='icon-general-fill-g-path'
                                     />
                                     <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>
-                                        Nilote Tool
+                                        Tombolo Tool
                                     </span>
                                 </>
                             }

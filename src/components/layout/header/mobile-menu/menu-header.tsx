@@ -20,7 +20,7 @@ const MenuHeader = ({ hideLanguageSetting, openLanguageSetting }: TMenuHeader) =
     return (
         <div className='mobile-menu__header'>
             <Text size={isDesktop ? 'md' : 'lg'} weight='bold'>
-                {localize('Nilote Gramm')}
+                {localize('Tombolo Traders Hub')}
             </Text>
 
             {!hideLanguageSetting && (

@@ -9,7 +9,7 @@ export default function QuantumLoader({ message }: { message: string }) {
             justifyContent: 'center',
             height: '100vh',
             width: '100%',
-            background: 'radial-gradient(ellipse at center, #0f0c29 0%, #302b63 50%, #24243e 100%)',
+            background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
             position: 'fixed',
             top: 0,
             left: 0,
@@ -17,179 +17,158 @@ export default function QuantumLoader({ message }: { message: string }) {
             overflow: 'hidden',
             padding: isMobile ? '20px' : '0'
         }}>
-            {/* Responsive Holographic Grid */}
+            {/* Elegant backdrop with subtle pattern */}
             <div style={{
                 position: 'absolute',
-                width: '200%',
-                height: '200%',
-                background: `
-          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
-        `,
-                backgroundSize: isMobile ? '30px 30px' : '40px 40px',
-                animation: 'gridMove 20s linear infinite',
-                transform: 'rotate(15deg)'
+                width: '100%',
+                height: '100%',
+                backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+                opacity: 0.8
             }}></div>
 
-            {/* Responsive Quantum Core */}
+            {/* Sophisticated loading indicator */}
             <div style={{
                 position: 'relative',
-                width: isMobile ? '150px' : '220px',
-                height: isMobile ? '150px' : '220px',
-                marginBottom: isMobile ? '20px' : '40px'
+                width: isMobile ? '120px' : '180px',
+                height: isMobile ? '120px' : '180px',
+                marginBottom: isMobile ? '24px' : '32px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
             }}>
-                {/* Energy Pulse Rings */}
+                {/* Concentric circles with subtle animation */}
                 <div style={{
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
                     borderRadius: '50%',
-                    border: `2px solid rgba(0, 255, 255, ${isMobile ? '0.2' : '0.3'})`,
-                    animation: 'pulse 3s ease-out infinite',
-                    boxShadow: '0 0 15px cyan'
+                    border: '1px solid rgba(99, 102, 241, 0.2)',
+                    animation: 'pulse 4s ease-in-out infinite'
                 }}></div>
                 <div style={{
                     position: 'absolute',
-                    width: '100%',
-                    height: '100%',
+                    width: '80%',
+                    height: '80%',
                     borderRadius: '50%',
-                    border: `2px solid rgba(255, 0, 255, ${isMobile ? '0.2' : '0.3'})`,
-                    animation: 'pulse 3s ease-out infinite',
-                    animationDelay: '1s',
-                    boxShadow: '0 0 15px magenta'
+                    border: '1px solid rgba(59, 130, 246, 0.3)',
+                    animation: 'pulse 4s ease-in-out infinite 0.5s'
                 }}></div>
-
-                {/* Quantum Particles - Reduced count on mobile */}
-                {[...Array(isMobile ? 8 : 12)].map((_, i) => (
-                    <div key={i} style={{
-                        position: 'absolute',
-                        width: isMobile ? '8px' : '12px',
-                        height: isMobile ? '8px' : '12px',
-                        borderRadius: '50%',
-                        background: `hsl(${i * 30}, 100%, 70%)`,
-                        filter: 'blur(1px)',
-                        animation: `orbit ${4 + Math.random() * 3}s cubic-bezier(0.4, 0, 0.2, 1) infinite`,
-                        animationDelay: `${Math.random() * 2}s`,
-                        top: '50%',
-                        left: '50%',
-                        marginTop: isMobile ? '-4px' : '-6px',
-                        marginLeft: isMobile ? '-4px' : '-6px',
-                        transformOrigin: `${isMobile ? 60 : 100}px center`,
-                        boxShadow: '0 0 10px currentColor'
-                    }}></div>
-                ))}
-
-                {/* Central Hologram */}
                 <div style={{
                     position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    perspective: '1000px'
+                    width: '60%',
+                    height: '60%',
+                    borderRadius: '50%',
+                    border: '1px solid rgba(167, 139, 250, 0.4)',
+                    animation: 'pulse 4s ease-in-out infinite 1s'
+                }}></div>
+
+                {/* Central logo with refined animation */}
+                <div style={{
+                    position: 'relative',
+                    width: isMobile ? '50px' : '70px',
+                    height: isMobile ? '50px' : '70px',
+                    animation: 'gentleFloat 3s ease-in-out infinite'
                 }}>
                     <img
                         src="/LOGO.png"
                         alt="Loading"
                         style={{
-                            width: isMobile ? '60px' : '100px',
-                            height: isMobile ? '60px' : '100px',
+                            width: '100%',
+                            height: '100%',
                             objectFit: 'contain',
-                            animation: 'hologramFloat 4s ease-in-out infinite',
-                            filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.8))'
+                            filter: 'drop-shadow(0 0 8px rgba(99, 102, 241, 0.5))'
                         }}
                     />
                 </div>
             </div>
 
-            {/* Responsive Loading Text */}
+            {/* Progress indicator */}
             <div style={{
-                position: 'relative',
-                fontSize: isMobile ? '16px' : '20px',
-                fontWeight: 300,
-                color: 'rgba(255,255,255,0.9)',
-                textTransform: 'uppercase',
-                letterSpacing: isMobile ? '1px' : '2px',
-                textShadow: '0 0 10px rgba(255,255,255,0.5)',
-                textAlign: 'center',
-                padding: isMobile ? '0 20px' : '0',
-                maxWidth: isMobile ? '80%' : '100%'
+                width: isMobile ? '80%' : '300px',
+                height: '4px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '2px',
+                overflow: 'hidden',
+                marginBottom: isMobile ? '20px' : '24px'
             }}>
-                {message}
-                <span style={{
-                    display: 'inline-block',
-                    width: isMobile ? '20px' : '30px',
-                    textAlign: 'left',
-                    animation: 'quantumDots 2s infinite steps(4)'
-                }}></span>
+                <div style={{
+                    height: '100%',
+                    width: '0%',
+                    backgroundColor: '#6366f1',
+                    borderRadius: '2px',
+                    animation: 'progressLoad 2.5s ease-in-out infinite',
+                    boxShadow: '0 0 8px rgba(99, 102, 241, 0.5)'
+                }}></div>
             </div>
 
-            {/* Optimized Binary Rain for Mobile */}
+            {/* Loading text with refined typography */}
             <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                overflow: 'hidden',
-                zIndex: -1
+                fontSize: isMobile ? '14px' : '16px',
+                fontWeight: 400,
+                color: 'rgba(255, 255, 255, 0.9)',
+                letterSpacing: '0.5px',
+                textAlign: 'center',
+                marginBottom: '8px',
+                textTransform: 'uppercase'
             }}>
-                {[...Array(isMobile ? 15 : 30)].map((_, i) => (
-                    <div key={i} style={{
-                        position: 'absolute',
-                        fontSize: isMobile ? '12px' : '14px',
-                        color: `rgba(0, 255, 255, ${Math.random() * 0.3 + 0.1})`,
-                        top: '-20px',
-                        left: `${Math.random() * 100}%`,
-                        animation: `binaryFall ${Math.random() * 5 + 3}s linear infinite`,
-                        animationDelay: `${Math.random() * 5}s`,
-                        fontFamily: 'monospace',
-                        lineHeight: '1.5'
-                    }}>
-                        {Array.from({ length: isMobile ? 5 : 10 }).map((_, j) => (
-                            Math.random() > 0.5 ? '1' : '0'
-                        )).join(' ')}
-                    </div>
-                ))}
+                {message}
+            </div>
+
+            {/* Status indicator */}
+            <div style={{
+                fontSize: isMobile ? '12px' : '14px',
+                fontWeight: 300,
+                color: 'rgba(255, 255, 255, 0.6)',
+                letterSpacing: '0.3px',
+                textAlign: 'center',
+                height: '18px'
+            }}>
+                <span style={{
+                    display: 'inline-block',
+                    animation: 'statusRotate 6s linear infinite'
+                }}>
+                    {['Initializing', 'Loading assets', 'Finalizing setup'][Math.floor(Date.now() / 1000 % 3)]}
+                </span>
+                <span style={{
+                    display: 'inline-block',
+                    width: '16px',
+                    textAlign: 'left',
+                    animation: 'fadeDots 1.5s infinite steps(4)'
+                }}></span>
             </div>
 
             {/* CSS Animations */}
             <style>
                 {`
         @keyframes pulse {
-          0% { transform: scale(0.8); opacity: 0; }
-          50% { opacity: 0.8; }
-          100% { transform: scale(1.4); opacity: 0; }
+          0%, 100% { transform: scale(1); opacity: 0.5; }
+          50% { transform: scale(1.05); opacity: 0.8; }
         }
         
-        @keyframes orbit {
-          0% { transform: rotate(0deg) translateX(${isMobile ? '50px' : '80px'}) rotate(0deg); }
-          100% { transform: rotate(360deg) translateX(${isMobile ? '50px' : '80px'}) rotate(-360deg); }
+        @keyframes gentleFloat {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(2deg); }
         }
         
-        @keyframes hologramFloat {
-          0%, 100% { transform: translateY(0) rotateY(0deg); }
-          25% { transform: translateY(${isMobile ? '-10px' : '-15px'}) rotateY(15deg); }
-          50% { transform: translateY(0) rotateY(0deg); }
-          75% { transform: translateY(${isMobile ? '-7px' : '-10px'}) rotateY(-15deg); }
+        @keyframes progressLoad {
+          0% { width: 0%; left: 0; }
+          50% { width: 100%; left: 0; }
+          100% { width: 0%; left: 100%; }
         }
         
-        @keyframes quantumDots {
-          0% { content: ''; }
-          25% { content: '.'; }
-          50% { content: '..'; }
-          75% { content: '...'; }
-          100% { content: ''; }
+        @keyframes statusRotate {
+          0%, 33% { content: 'Initializing'; }
+          34%, 66% { content: 'Loading assets'; }
+          67%, 100% { content: 'Finalizing setup'; }
         }
         
-        @keyframes binaryFall {
-          to { transform: translateY(100vh); }
-        }
-        
-        @keyframes gridMove {
-          from { transform: rotate(15deg) translateX(0); }
-          to { transform: rotate(15deg) translateX(${isMobile ? '-30px' : '-40px'}) translateY(${isMobile ? '-30px' : '-40px'}); }
+        @keyframes fadeDots {
+          0% { opacity: 0; content: ''; }
+          25% { opacity: 1; content: '.'; }
+          50% { opacity: 1; content: '..'; }
+          75% { opacity: 1; content: '...'; }
+          100% { opacity: 0; content: ''; }
         }
         `}
             </style>

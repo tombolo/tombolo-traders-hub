@@ -19,18 +19,18 @@ const BlocklyLoading = observer(() => {
 
             interval = setInterval(() => {
                 setProgress(prev => {
-                    if (prev >= 95) {
+                    if (prev >= 97) {
                         clearInterval(interval);
                         return prev;
                     }
-                    return prev + Math.random() * 10;
+                    return prev + Math.random() * 5; // Smoother progress
                 });
-            }, 300);
+            }, 200);
         } else {
             setProgress(100);
             timeout = setTimeout(() => {
                 setShowLoading(false);
-            }, 500);
+            }, 800); // Longer fade-out for smoother transition
         }
 
         return () => {
@@ -43,17 +43,29 @@ const BlocklyLoading = observer(() => {
 
     return (
         <div className={`bot__loading ${!is_loading ? 'fade-out' : ''}`} data-testid='blockly-loader'>
-            <div className="loading-text">Loading Nilote bot...</div>
-            <div className="progress-container">
-                <div
-                    className="progress-bar"
-                    style={{ width: `${progress}%` }}
-                ></div>
-            </div>
-            <div className="loading-dots">
-                <span className="dot">.</span>
-                <span className="dot">.</span>
-                <span className="dot">.</span>
+            <div className="loading-content">
+                <div className="loading-logo">
+                    <svg viewBox="0 0 100 100" className="logo-spinner">
+                        <circle cx="50" cy="50" r="45" className="logo-track" />
+                        <circle cx="50" cy="50" r="45" className="logo-path" />
+                    </svg>
+                </div>
+                <div className="loading-text">Initializing Tombolo Bot</div>
+                <div className="progress-container">
+                    <div className="progress-track">
+                        <div
+                            className="progress-bar"
+                            style={{ width: `${progress}%` }}
+                        />
+                    </div>
+                    <div className="progress-percentage">{Math.round(progress)}%</div>
+                </div>
+                <div className="loading-status">
+                    {progress < 30 && 'Loading components...'}
+                    {progress >= 30 && progress < 70 && 'Configuring settings...'}
+                    {progress >= 70 && progress < 90 && 'Finalizing setup...'}
+                    {progress >= 90 && 'Almost ready...'}
+                </div>
             </div>
         </div>
     );

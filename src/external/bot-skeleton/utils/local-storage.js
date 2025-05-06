@@ -30,7 +30,7 @@ const getStaticBots = async () => {
     return [
         {
             id: 'nilote_mine',
-            name: 'Nilote Mine V 3.5',
+            name: 'Tombolo Mine V 3.5',
             xml: dollarMinerXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,

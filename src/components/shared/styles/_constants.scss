@@ -9,15 +9,15 @@
 /* COLOR PALETTE */
 
 /* colors */
-$color-black: #0f0f11;
-$color-black-1: #241c97;
-$color-blackie: #e9eef0;
-$color-gray-6: #FFFFFF;
+$color-black: #39393d;
+$color-black-1: #1c157a;
+$color-blackie: #FFFFFF;
+$color-gray-6: #575454;   // Dark grey for depth change
 $color-black-3: #FFFFFF;
-$color-black-4: #27292a;
+$color-black-4: #787e81;
 $color-black-5: #2e3233;
 $color-black-6: #525252;
-$color-black-7: #2b1db1;
+$color-black-7: #1a1168;
 $color-black-8: #3a3f40;
 $color-black-9: #6a6a6a;
 $color-blue: #4484ff;
@@ -29,11 +29,11 @@ $color-blue-5: #e2ecff;
 $color-blue-6: #a0c4ff;
 $color-blue-7: #1f2a3b; 
 $color-blue-8: #fff8ee;
-$color-blue-9: #0F172A;
+$color-blue-9: #0a1f4d;
 $color-brown: #7a5020;
 $color-green: #1d1644;
 $color-green-1: #213780;
-$color-green-2: #9b9987;
+$color-green-2: #88879b;
 $color-green-3: #254da5;
 $color-green-4: #b19a1b;
 $color-green-5: #56c5c429;
@@ -42,7 +42,7 @@ $color-green-7: #ebfefb;
 $color-green-8: #d5e4e5;
 $color-grey: #8c84a7;
 $color-grey-1: #FFFFFF;
-$color-grey-2: #112131;
+$color-grey-2: #7a8c9e;
 $color-grey-3: #e0e7e9;
 $color-grey-4: #209494;
 $color-grey-5: #14272c;
@@ -86,7 +86,7 @@ $color-light-grey: #d3d3d3; // Light grey for readability
 $color-green-3: #4caf50; // Green for success
 $color-red-2: #e74c3c; // Red for errors/losses
 $color-red: hsl(251, 68%, 28%); // Brighter red variant
-$color-white: #dcdde7; // White for text/icons
+$color-white: #bec0c4; // White for text/icons      THIS IS THE HEADER COLOR
 
 /* icons */
 $color-icon-light: $color-dark-navy;

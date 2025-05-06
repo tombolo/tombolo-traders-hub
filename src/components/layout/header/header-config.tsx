@@ -62,7 +62,7 @@ export const platformsConfig: PlatformsConfig[] = [
 
 export const TRADERS_HUB_LINK_CONFIG = {
     as: 'a',
-    label: "Nilote GramM",
+    label: "Tombolo Traders Hub",
 };
 
 export const MenuItems: MenuItemsConfig[] = [
