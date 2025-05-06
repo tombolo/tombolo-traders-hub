@@ -9,10 +9,8 @@ const CopyTradingPage = () => {
     const wsRef = useRef<WebSocket | null>(null);
 
     useEffect(() => {
-        console.log('[useEffect] Cleanup on unmount');
         return () => {
             if (wsRef.current) {
-                console.log('[useEffect] Closing WebSocket on unmount');
                 wsRef.current.close();
             }
         };
@@ -39,10 +37,34 @@ const CopyTradingPage = () => {
         wsRef.current.onmessage = (event) => {
             const data = JSON.parse(event.data);
             setResponse(data);
-            if (data.msg_type === 'authorize' && data.error) {
-                alert('Authorization failed: ' + data.error.message);
+
+            // Handle errors on authorization
+            if (data.msg_type === 'authorize') {
+                if (data.error) {
+                    alert('Authorization failed: ' + data.error.message);
+                } else {
+                    enableCopyPermission(); // Enable copy permission after successful auth
+                }
+            }
+
+            // Optional: show a message on settings update
+            if (data.msg_type === 'set_settings') {
+                if (!data.error) {
+                    alert('Copy trading permission enabled.');
+                } else {
+                    console.error('Failed to enable copy trading:', data.error.message);
+                }
             }
         };
+    };
+
+    const enableCopyPermission = () => {
+        const request = {
+            set_settings: 1,
+            allow_copiers: 1,
+            req_id: Date.now(),
+        };
+        wsRef.current?.send(JSON.stringify(request));
     };
 
     const startCopyTrading = () => {
@@ -59,7 +81,6 @@ const CopyTradingPage = () => {
             wsRef.current?.send(JSON.stringify(request));
         });
     };
-
 
     const stopCopyTrading = () => {
         connectWebSocket(() => {
