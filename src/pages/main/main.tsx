@@ -28,7 +28,7 @@ import RunStrategy from '../dashboard/run-strategy';
 import Dtrader from '../dtrader/trade'
 import Finesttool from '../finesttool/finesttool';
 import Tradingview from '../tradingview/tradingview';
-import Strategies from '../strategies/strategies';
+import Strategies from '../copytrading/copytrading';
 import Strategy from '../strategy/strategy';
 import Risk from '../risk/risk';
 
