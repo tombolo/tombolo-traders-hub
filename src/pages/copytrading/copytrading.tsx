@@ -24,7 +24,7 @@ const CopyTradingPage = () => {
             return;
         }
 
-        wsRef.current = new WebSocket('wss://ws.derivws.com/websockets/v3?app_id=71608');
+        wsRef.current = new WebSocket('wss://ws.derivws.com/websockets/v3?app_id=70344');
 
         wsRef.current.onopen = () => {
             setIsConnected(true);
