@@ -20,39 +20,39 @@ const fetchBotXml = async botName => {
 
 // Static bot definitions with async XML loading
 const getStaticBots = async () => {
-    const [dollarMinerXml, dollarFlipperXml] = await Promise.all([
-        fetchBotXml('nilote_mine'),
-        fetchBotXml('binary_smasher'),
-        fetchBotXml('binary_smasher_2'),
-        fetchBotXml('market_maven'),
+    const [dollarMinerXml, dollarFlipperXml, fastMoneyProXml, derivMinerProXml] = await Promise.all([
+        fetchBotXml('dollar_miner'),
+        fetchBotXml('dollar_flipper'),
+        fetchBotXml('fast_money_pro'),
+        fetchBotXml('deriv_miner_pro'),
     ]);
 
     return [
         {
-            id: 'nilote_mine',
-            name: 'Tombolo Mine V 3.5',
+            id: 'dollar_miner',
+            name: 'Dollar Miner 1',
             xml: dollarMinerXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,
         },
         {
-            id: 'binary_smasher',
-            name: 'Binary Smasher 1.0',
+            id: 'dollar_flipper',
+            name: 'Dollar Flipper',
             xml: dollarFlipperXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,
         },
         {
-            id: 'binary_smasher_2',
-            name: 'Binary Smasher 2.0',
-            xml: dollarFlipperXml,
+            id: 'fast_money_pro_',
+            name: 'Fast Money Pro',
+            xml: fastMoneyProXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,
         },
         {
-            id: 'market_maven',
-            name: 'Market Maven 1.0',
-            xml: dollarFlipperXml,
+            id: 'deriv_miner_pro',
+            name: 'Deriv Miner pro',
+            xml: derivMinerProXml,
             timestamp: Date.now(),
             save_type: save_types.LOCAL,
         },
